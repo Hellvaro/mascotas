@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+	<html lang= 'es'>
+	<head>
+		<meta charset='utf-9'>
+		<title>Mascotas - {% block titulo %} {% endblock %}</title>
+		<style>
+			{% block style_css %}{% endblock %}
+		</style>
+	<head>
+	<body>		
+	<header>
+		<nav>
+			<ul>
+				<li><a href='/'>Inicio</a></li>
+				<li><a href='/usuarios'>Usuarios registrados</a></li>
+				<li><a href='/mascotas'>Mascotas</a></li>
+				<li><a href="/mascotas_perdidas">Mascotas Perdidas</a></li>
+				<li><a href="/mascotas_encontradas">Mascotas Encontradas</a></li>
+				
+			</ul>
+		</nav>
+	</header>
+	<section class= 'contenido'>
+		{% block contenido %}{% endblock %}
+	</section>
+	<footer>
+		<p> Pagina para registrar mascotas</p>
+    </footer>
+    </body>
+ </html>   

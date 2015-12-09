@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block titulo %} Mascotas Perdidas {% endblock %}
+
+{% block css %}
+	<style>
+		img {width:100px;}
+	</style>
+{% endblock %}		
+
+
+{% block contenido %}
+<h1>Mascotas Perdidas:</h1>
+
+<ul>
+	{% for dato in datos %}
+	<li>
+		Nombre:  <a href='/mascota/{{dato.id}}' >{{dato.mascota.nombre|title}}</a><br>	
+		Recompensa: ${{dato.recompensa}}<br> 
+		Descripcion:  {{dato.descripcion}}<br>
+
+		
+	</li>
+	{% empty %}
+	<li> Aun no hay mascotas perdidas</li>
+
+	
+	{% endfor %}
+</ul>
+{% endblock %}		

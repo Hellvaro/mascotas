@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block titulo %} Mascotas Encontradas {% endblock %}
+
+{% block css %}
+	<style>
+		img {width:100px;}
+	</style>
+{% endblock %}		
+
+
+{% block contenido %}
+<h1>Mascotas Encontradas:</h1>
+
+<ul>
+	{% for dato in datos2 %}
+	<li>
+		Nombre:  <a href='/mascota/{{dato.id}}' >{{dato.mascota.nombre|title}}</a><br>	
+		
+
+		
+	</li>
+	{% empty %}
+	<li> Aun no hay mascotas perdidas</li>
+
+	
+	{% endfor %}
+</ul>
+{% endblock %}		

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block titulo %} {{mascota.nombre}} {% endblock %}
+
+{% block encabezado %}
+	<h1> {{mascota.nombre|title}}</h1>
+{% endblock %}
+
+{% block contenido %}
+	<div id='nombre'>
+		<h2>Nombre</h2>
+		<p>{{mascota.nombre|title}}</p>
+	<div id='raza'	>
+		<h2>Raza</h2>
+		<p>{{mascota.raza|title}}</p>
+	</div>
+	<div id='color'>
+		<h2>Color</h2>
+		<p>{{mascota.color|title}}</p>
+	</div>
+	<div id='imagen'>
+		<img src='{{MEDIA_URL}}{{mascota.imagen}}'>
+	</div>
+	
+	
+	<footer>
+		<p> Registrado {{ mascota.tiempo_registro|date:'SHORT_DATETIME_FORMAT'}} por {{mascota.usuario}}</p>
+	</footer>
+{% endblock %}				

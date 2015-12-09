@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Mascotas Registradas {% endblock %}
+
+{% block css %}
+	<style>
+		img {width:100px;}
+	</style>
+{% endblock %}		
+
+
+{% block contenido %}
+<h1> Mascotas Registradas </h1>
+
+<ul>
+	<li><a href='/mascota/nueva/'>Agregar una mascota</a></li>
+	{% for dato in datos %}
+	<li>
+		<a href='/mascota/{{dato.id}}' >{{dato.nombre}}</a><br>	
+		
+		
+	</li>
+	{% empty %}
+	<li> Aun no hay mascotas registradas</li>
+
+	
+	{% endfor %}
+</ul>
+{% endblock %}		
